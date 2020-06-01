@@ -1,2 +1,2 @@
 ## Colebrook Solver
-[Click to view](./colebrooksolver/index.html)
+[Click to view](./ColebrookSolver/ColebrookSolver/index.html)
