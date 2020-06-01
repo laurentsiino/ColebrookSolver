@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Colebrook solver</title>
+    <style>
+		textarea {
+			resize: none;
+		}
+		label {
+			width: 160px;
+			clear: left;
+			text-align: left;
+			padding-right: 10px;
+		}
+		#Moody {
+			width: 50vw;
+			height: 50vh;
+			height: auto;
+		}
+		#Colebrookeq {
+			width: 340px;
+			height: auto;
+		}
+    </style>
+</head>
+<body>
+    <div>
+        <h1 style="font-family:'HP Simplified';font-size:70px;text-align:center; top:0px;margin-top: 10px;margin-bottom:10px"> Colebrook solver </h1>
+        <h2 style="font-family:'HP Simplified';font-size:30px;text-align:center; top:0px;margin-top: 0px;margin-bottom:0px">
+            Solve the Colebrook equation for the friction factor, the
+            relative roughness, the Reynolds number or small pipe diameter
+        </h2>
+    </div>
+	<div style="display:grid">
+		<div style="grid-column-start: 1;  grid-row-start: 1">
+			<div>
+				<form style="font-size:15px">
+					<p>Select variable to solve</p>
+					<input type="radio" id="solved" name="change" value="Constant-pressure temperature change" checked>
+					<label for="Constant-pressure temperature change">Solve for diameter</label><br>
+					<input type="radio" id="solvee" name="change" value="Isentropic temperature change">
+					<label for="Isentropic temperature change">Solve for absolute roughness</label><br>
+					<input type="radio" id="solver" name="change" value="Solve for Reynolds number">
+					<label for="Mixture">Solve for Reynolds number (approximative)</label><br>
+					<input type="radio" id="solvef" name="change" value="Solve for friction factor">
+					<label for="Isenthalpic Pressure change">Solve for friction factor</label>
+				</form>
+			</div><br>
+			<div>
+				<textarea id="Diameter" rows="1" style="overflow:hidden">0.63</textarea>
+				<label style="float:left " for="Diameter">Pipe diameter (m): </label><br>
+				<textarea id="Roughness" rows="1" style="overflow:hidden">0.003 </textarea>
+				<label style="float:left " for="Roughness">Absolute roughness (m): </label><br>
+				<textarea id="Reynolds" rows="1" style="overflow:hidden">1328600</textarea>
+				<label style="float:left " for="Reynolds">Reynolds number: </label><br>
+				<textarea id="Darcy" rows="1" style="overflow:hidden">0.03 </textarea>
+				<label style="float:left " for="Darcy">Darcy friction factor: </label><br>
+
+			</div>
+			<div style="clear: left;padding-left: 170px"><button id="calculate" type="button">Calculate</button></div>
+			<img id="Colebrookeq" style="grid-column-start: 2;  grid-row-start: 1" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/4d6e7227ce11e40381bcef2d30c8934900227d51">
+			<p>Moody Diagram by <a href="https://commons.wikimedia.org/wiki/File:Moody_EN.svg">S Beck and R Collins</a>, University of Sheffield</p>
+		</div>
+		<img id="Moody"style="grid-column-start: 2;  grid-row-start: 1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Moody_EN.svg/1280px-Moody_EN.svg.png">
+	</div>
+    <script src=solver.js>
+
+    </script>
+</body>
+</html>
